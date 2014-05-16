@@ -1,0 +1,31 @@
+{
+  "name": "Varde",
+  "version": "1.0.0",
+  "description": "Javascript for Varde",
+  "main": "src/js/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "varde"
+  },
+  "author": "Martin Sanne Kristiansen",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "gulp-livereload": "~1.2.0",
+    "gulp-rename": "~1.2.0",
+    "gulp-concat": "~2.2.0",
+    "tiny-lr": "0.0.5",
+    "gulp-uglify": "~0.2.1",
+    "gulp-autoprefixer": "0.0.6",
+    "gulp-util": "~2.2.14",
+    "gulp": "~3.6.0",
+    "gulp-notify": "~1.2.5",
+    "gulp-csso": "~0.2.6",
+    "gulp-jshint": "~1.5.2",
+    "gulp-sass": "~0.7.1",
+    "gulp-uncss-task": "~0.3.0",
+    "gulp-uncss": "~0.4.3"
+  }
+}

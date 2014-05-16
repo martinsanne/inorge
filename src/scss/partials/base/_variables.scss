@@ -1,0 +1,17 @@
+$base-url: '../../';
+
+$color-primary: #222222;
+$color-secondary: tint($color-primary, 30%);
+
+$selection-color: tint( $color-primary, 75% );
+
+
+$orange: #E88529; //rgba(232, 133, 41, 1);
+$mint: #21AD96; //rgba(33, 173, 150, 1);
+$lightgreen: #8FC247; //rgba(143, 194, 71, 1);
+$red: #EB6E5C; //rgba(235, 110, 92, 1);
+$deepgreen: #004F3D; //rgba(0, 79, 61, 1);
+$yellow: #FFD970; //rgba(255, 217, 112, 1);
+$purple: #8C4A82; //rgba(140, 74, 130, 1);
+$gray: #3D3D40; //rgba(61, 61, 64, 1);
+$blue: #47BFE3; //rgba(71, 191, 227, 1);

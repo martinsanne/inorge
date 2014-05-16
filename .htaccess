@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule datalayer/datalayer.json datalayer/datalayer.php

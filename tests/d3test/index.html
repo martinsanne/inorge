@@ -1,0 +1,99 @@
+<!doctype html>
+<html class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<title>Grønt punkt</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="d3.js"></script>
+		<script type="text/javascript" src="d3.geo.js"></script>
+		<script src="http://d3js.org/topojson.v1.min.js"></script>
+		<script type="text/javascript" src="KOSTRA.txt.json"></script>
+		<link type="text/css" rel="stylesheet" href="style.css"/>
+		<link type="text/css" rel="stylesheet" href="colorbrewer.css"/>
+	</head>
+<body>
+	<div id="body">    
+		<div id="top">
+			Color by: <span><select id="parameter" class="large"></select></span>
+		</div>
+	</div>
+	<script type="text/javascript">
+
+	var svg = d3.select("body").append("svg:svg")
+			.attr("class", "RdYlGn")
+			.attr('viewBox', '0 0 600 800');
+
+	// data is the variable in the script file KOSTRA.txt.json
+	var params = [];
+		for (var key in data[0]){
+			params.push( key );
+		}
+		d3.select("#parameter").selectAll("option")
+			.data( params )
+			.enter()
+				.append('option')
+					.attr("value",function(d,i){return d;})
+					.text(function(d,i){return d;});
+
+	var quantize = null;
+	function update_quant(){
+			param = document.getElementById("parameter").value;
+			mmin = 99999999.9;
+			mmax = -99999999.9;
+			for (var key in data_map) {
+					v = parseFloat(data_map[key][param]);
+					if (v != -1 && v != 0){
+						if (v < mmin){mmin = v;}
+						if (v > mmax){mmax = v;}
+					}
+			}
+			quantize = d3.scale.quantile().domain([mmin, mmax]).range(d3.range(9));
+			console.log( param + ": " + mmin + "->" + mmax );
+	}
+	update_quant();
+
+
+	var path = d3.geo.path()
+		.projection(d3.geo.albers()
+				.origin([12, 65])
+				.parallels( [60.0, 68.0] )
+				.scale(3000)
+				.translate([200, 390])
+		);
+
+
+	var kommunejson = null;
+	var kommuner = svg.append( 'svg:g' ).attr("id", "kommuner" );
+	d3.json( "../json/norway.json", function( data ){
+			kommunejson = topojson.feature(data, data.objects.municipalities);
+			document.getElementById("parameter").options.selectedIndex = 8;
+			update_colors();
+	});
+
+	function update_colors(){
+			update_quant();
+			param = document.getElementById("parameter").value;
+			kommuner.selectAll( "path" )
+					.data( kommunejson.features )
+							.attr("class", function(d) { return "q" + quantize(data_map[d.properties.KOMM][param] ) + "-9"; })
+							.select("title")
+									.text( function(d){ return d.properties.NAVN + " " + param + " = " +data_map[d.properties.KOMM][param];})
+					;
+			kommuner.selectAll( "path" )
+					.data( kommunejson.features )
+					.enter().append("svg:path")
+							.transition()   
+							.attr("class", function(d) { return "q" + quantize(data_map[d.properties.KOMM][param] ) + "-9"; })
+							.attr("d", path )
+							.append( "svg:title" )
+									.text( function(d){ return d.properties.NAVN + " " + param + " = " +data_map[d.properties.KOMM][param];})
+			;
+	}
+
+	d3.select("#parameter").on("change", update_colors );
+
+
+	</script>
+	</body>
+</html>

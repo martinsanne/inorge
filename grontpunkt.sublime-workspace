@@ -1,0 +1,922 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"munici",
+				"municipality"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"muni",
+				"municipality_data"
+			],
+			[
+				"pro",
+				"properties"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"tex",
+				"text-transform"
+			],
+			[
+				"che",
+				"checked"
+			],
+			[
+				"check",
+				"checkbox"
+			],
+			[
+				"get",
+				"getProperty"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"marg",
+				"margin-right"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"pa",
+				"padding-right"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"ce",
+				"clear"
+			],
+			[
+				"text",
+				"text-color"
+			],
+			[
+				"border",
+				"border-bottom"
+			],
+			[
+				"bor",
+				"border"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"close",
+				"closeOnEscape"
+			],
+			[
+				"ma",
+				"max-width"
+			],
+			[
+				"f",
+				"fixed"
+			],
+			[
+				"bord",
+				"border-bottom"
+			],
+			[
+				"ht",
+				"htmlbody"
+			],
+			[
+				"no",
+				"nowrap"
+			],
+			[
+				"line",
+				"line-height-computed"
+			],
+			[
+				"border-top",
+				"border-top-left-radius"
+			],
+			[
+				"font-size",
+				"font-size-base"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"line-height",
+				"line-height-medium"
+			],
+			[
+				"wooc",
+				"woocommerce"
+			],
+			[
+				"inli",
+				"inline-block"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"togg",
+				"toggleClass"
+			],
+			[
+				"re",
+				"resize"
+			],
+			[
+				"resize",
+				"resizeToParent"
+			],
+			[
+				"wi",
+				"window"
+			],
+			[
+				"img",
+				"img"
+			],
+			[
+				"b",
+				"block"
+			],
+			[
+				"str_r",
+				"str_replace"
+			],
+			[
+				"n",
+				"nowrap"
+			],
+			[
+				"backgr",
+				"background-color"
+			],
+			[
+				"ob_get",
+				"ob_get_contents"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"t",
+				"type	Attr"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/scss/partials/modules/_map.scss",
+			"settings":
+			{
+				"buffer_size": 890,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/scss/partials/base/_variables.scss",
+			"settings":
+			{
+				"buffer_size": 522,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/scss/partials/layout/_grid.scss",
+			"settings":
+			{
+				"buffer_size": 1464,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 1387,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/js/app.js",
+			"settings":
+			{
+				"buffer_size": 8600,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/scss/partials/base/_typography.scss",
+			"settings":
+			{
+				"buffer_size": 657,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 115.0,
+		"selected_items":
+		[
+			[
+				"json",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"jso",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"prett",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"markdown",
+				"Markdown Preview: Github Flavored Markdown: Preview in Browser"
+			],
+			[
+				"markd",
+				"Markdown Preview: Github Flavored Markdown: Copy to Clipboard"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 633.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/src/scss/partials/base/_normalize.scss",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/src/scss/partials/modules/_all.scss",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/src/scss/partials/base/_variables.scss",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/src/scss/partials/layout/_grid.scss",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/src/scss/partials/grid/_grid-settings.scss",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/src/scss/partials/grid/_grid-breakpoints.scss",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/src/scss/partials/base/_typography.scss",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/src/js/app.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/tests/index.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/gulpfile.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/dist/js/main.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/d3/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/json/member_municipalities.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/index2.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/index.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/json/norway-old.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/json/municipalities_clean.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/json/counties.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/json/norway.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/README.md",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/json/index.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/json/counties_clean.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/json/municipalities.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/json/municipalities_rendered.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/datalayer/datalayer.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/admin/generator.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/json/counties_custom.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/admin/index.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/d3test/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/us.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/topojson.v1.min.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/d3.v3.min.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/json/nko.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/src/scss/partials/modules/_chosen.scss",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/linex.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/us_counties.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/assets/off.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/d3/style.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/d3/KOSTRA.txt.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/d3/colorbrewer.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/src/scss/style.scss",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/src/scss/partials/layout/_all.scss",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/src/scss/partials/base/_general.scss",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/assets/mapstyle.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/rolf/kommuner.geojson",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/rolf/KOSTRA.txt.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/rolf/d3.geo.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/rolf/stryle.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/rolf/colorbrewer.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/json/us.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/rolf/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/rolf/d3.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/admin/generert/counties.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/admin/generert/log.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/admin/generert/municipalities.geojson",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/admin/generert/kommuner.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/admin/generert/fylker.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/admin/generert/fylker_adv.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/src/scss/partials/base/_all.scss",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/src/scss/partials/layout/_invert.scss",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/dist/css/style.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/dist/css/style.min.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/dist/css/main.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/js/main.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/src/scss/styles.scss",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/.htaccess",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/css/main.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/datalayer/test.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/example.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/sample.kml",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/generert/fylker.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/generator.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/generert/kommuner.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/admin/index.html",
+		"/Users/martinsannekristiansen/Downloads/Safari/mapit-master/mapit/templates/no/mapit/country.html",
+		"/Users/martinsannekristiansen/Downloads/Safari/mapit-master/mapit/templates/no/mapit/copyright.html",
+		"/Users/martinsannekristiansen/Downloads/Safari/mapit-master/mapit/templates/global/mapit/copyright.html",
+		"/Users/martinsannekristiansen/Downloads/Safari/mapit-master/mapit/templates/global/mapit/country.html",
+		"/Users/martinsannekristiansen/Downloads/Safari/norway-latest/landuse.prj",
+		"/Users/martinsannekristiansen/Downloads/Safari/norway-latest/landuse.dbf",
+		"/Users/martinsannekristiansen/Downloads/Safari/norway-latest/landuse.cpg",
+		"/Users/martinsannekristiansen/Downloads/Safari/norway-latest/buildings.prj",
+		"/Users/martinsannekristiansen/Downloads/Safari/norway-latest/buildings.dbf",
+		"/Users/martinsannekristiansen/Downloads/Safari/norway-latest/buildings.cpg",
+		"/Users/martinsannekristiansen/Downloads/Safari/norway-latest/README",
+		"/Users/martinsannekristiansen/Downloads/Safari/01.gpx",
+		"/Users/martinsannekristiansen/Downloads/Safari/map",
+		"/Users/martinsannekristiansen/Downloads/Safari/TM_WORLD_BORDERS-0/TM_WORLD_BORDERS-0.3.dbf",
+		"/Users/martinsannekristiansen/Downloads/Safari/Fylker.kml",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/css/less/royalslider.less",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/homepage.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/css/less/typography.less",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/css/less/tests.less",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/js/main-menu.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/js/global.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/css/less/variables.less",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/css/less/royalslider-base.less",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/css/less/1023.less",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/css/all.less",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/css/less/layout.less",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/css/less/main-menu.less",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/single.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/css/less/entry.less",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/css/less/1300.less",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/css/less/tests.scss",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/content-thumbnail.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/css/less/767.less",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/header.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/footer.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/css/less/footer.less",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/css/less/fontface.less",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/templates/main-menu.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/css/less/580.less",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/css/less/cookie-warning.less",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/templates/cookie-warning.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/inc/shortcodes.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/inc/init.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/js/showrooms.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/css/less/1600.less",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/inc/admin/admin.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/inc/admin/theme-options.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/inc/admin/meta.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/inc/admin/gform-navision.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/inc/admin/custom_post_types.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/css/less/mixins.less",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/css/editor.less",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/js/min/main-menu.min.js"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 95.0,
+		"where_history":
+		[
+			"",
+			"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/inc",
+			"",
+			"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/inc",
+			"",
+			"<open folders>",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"clicked",
+			"chosen",
+			"console",
+			"transit",
+			"opac",
+			"colorFromTo",
+			"topography",
+			"us",
+			"font-family",
+			"//",
+			"}",
+			".",
+			"current-county",
+			"svg",
+			"close",
+			"member_munic",
+			"municipality",
+			"feature",
+			"mouse",
+			"active",
+			"label",
+			"w.",
+			"\"county_id\": 4",
+			"Navn",
+			"NAVN",
+			"header",
+			"bbox",
+			"stroke",
+			"mapTypeId",
+			"++",
+			"foreEach",
+			"toggleFeatureSelect",
+			"toggle",
+			"'chosen-sprite.png'",
+			"chosen-sprite",
+			"buildCountyList",
+			"console.log",
+			"cons",
+			"getMembersMunic",
+			": 0617",
+			"setMapType",
+			"$hr-colo",
+			"$text",
+			"$text-color",
+			".json",
+			"#body",
+			"body",
+			"svg",
+			"shadow",
+			"texture-noi",
+			"noise",
+			"texture-nois",
+			"MultiPolygon",
+			"addList",
+			"addMapMarker",
+			"centre_lat",
+			"id\"",
+			"lon",
+			"lat",
+			".close",
+			"z-index",
+			"rsArrow",
+			".rsArrow",
+			"rsArrow",
+			"rsArrowLeft",
+			"rsArr",
+			"royalSlider",
+			"rsArrowIcn",
+			".entry-content-slider",
+			"slide",
+			"rsArrow",
+			"#slideshow",
+			"related articles",
+			"scale",
+			"transitio",
+			".container",
+			"#wrap",
+			"kill",
+			".container",
+			"#wrap",
+			".container",
+			"footer_he",
+			"sticky",
+			".wrap",
+			"#footer",
+			".header-wrap",
+			"header-wrap",
+			"#slideshow",
+			".search",
+			"#header",
+			".wrap",
+			"#wrap",
+			".wrap",
+			"swrap",
+			"class=\"container",
+			".container",
+			"#wrap",
+			"acf_",
+			"global",
+			"#content",
+			"#wrap",
+			"$header_wrap_push",
+			"header-wrap-push",
+			"simple-slider",
+			"fixed",
+			"site-title",
+			"@menu_padding:",
+			"search",
+			"yoast_breadcrumb",
+			"#header",
+			"sub-menu-holder",
+			"#main-menu",
+			"register_nav_me",
+			"do_meta",
+			"featured_image_medium",
+			"short_title",
+			"attachments",
+			"$col",
+			"top_posts",
+			"font-sm",
+			"webkit-font",
+			"antial",
+			"-webkit-font-smoothing",
+			"royalslider-css",
+			"meta_generator",
+			"atlas grotesk",
+			"menu-item-wide",
+			"Visual settings"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"text-large",
+			"padder-full",
+			"http://elleblogg.no/wp-content/uploads/sites/11/",
+			"http://elleblogg.no/wp-content/uploads/sites/9/",
+			"http://elleblogg.no/wp-content/uploads/sites/13/",
+			"http://elleblogg.no/wp-content/uploads/sites/8/",
+			"http://elleblogg.no/wp-content/uploads/sites/7/",
+			"http://elleblogg.no/wp-content/uploads/sites/15/",
+			"http://elleblogg.no/wp-content/uploads/sites/13/",
+			"http://elleblogg.no/wp-content/uploads/sites/11/",
+			"http://elleblogg.no/wp-content/uploads/sites/9/",
+			"http://elleblogg.no/wp-content/uploads/sites/8/",
+			"http://elleblogg.no/wp-content/uploads/sites/7/",
+			"http://elleblogg.no/wp-content/uploads/sites/15/",
+			"http://elleblogg.no/wp-content/uploads/sites/7/",
+			"http://elleblogg.no/wp-content/uploads/sites/13/",
+			"http://elleblogg.no/wp-content/uploads/sites/8/",
+			"http://elleblogg.no/wp-content/uploads/sites/9/",
+			"http://elleblogg.no/wp-content/uploads/sites/11/",
+			"http://elleblogg.no/wp-content/uploads/sites/15/",
+			"http://elleblogg.no/wp-content/uploads/sites/11/",
+			"http://elleblogg.no/wp-content/uploads/sites/15/"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/scss/partials/modules/_map.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 890,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								643,
+								643
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/scss/partials/base/_variables.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 522,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								265,
+								267
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/scss/partials/layout/_grid.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1464,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1398,
+								1387
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 582.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1387,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1006,
+								1006
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Craft-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/js/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8600,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4307,
+								4307
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 2.0,
+						"translation.y": 1749.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/scss/partials/base/_typography.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 657,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								346,
+								346
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "grontpunkt.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"helper",
+				"inc/helpers.php"
+			],
+			[
+				"footer",
+				"assets/scss/partials/layout/_footer.scss"
+			],
+			[
+				"foo",
+				"footer.php"
+			],
+			[
+				"check",
+				"woocommerce/checkout/form-checkout.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"heydays",
+				"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2013/heydays/wp-content/themes/heydays/heydays.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 375.0,
+		"selected_items":
+		[
+		],
+		"width": 378.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 305.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

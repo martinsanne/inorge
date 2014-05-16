@@ -1,0 +1,30 @@
+$small: new-breakpoint( max-width 672px );
+$medium: new-breakpoint( max-width 1088px );
+$large: new-breakpoint( max-width 1500px );
+$giant: new-breakpoint( min-width 1600px );
+
+@include responsive-invisibility('.visible-small, .visible-medium, .visible-base, .visible-large, .visible-giant');
+
+@include media( $large ) {
+	@include responsive-visibility( '.visible-large' );
+	@include responsive-invisibility( '.hidden-large' );
+}
+
+@include media( $medium ) {
+	@include responsive-visibility( '.visible-medium' );
+	@include responsive-invisibility( '.hidden-medium' );
+	@include responsive-ghost( '.ghost-medium' );
+}
+
+@include media( $small ) {
+	@include responsive-visibility( '.visible-small' );
+	@include responsive-invisibility( '.hidden-small' );
+}
+
+@include media( $giant ) {
+	@include responsive-visibility( '.visible-giant' );
+	@include responsive-invisibility( '.hidden-giant' );
+}
+
+@include responsive-visibility( '.visible-base' );
+@include responsive-invisibility( '.hidden-base' );

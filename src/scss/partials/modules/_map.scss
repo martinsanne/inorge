@@ -1,0 +1,64 @@
+.current-county {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	line-height: 1em;
+	margin: 0;
+	padding: 0;
+}
+.background {
+	fill: none;
+	pointer-events: all;
+}
+
+.feature {
+	stroke: #FFF;
+	fill: tint($deepgreen, 70%);
+	cursor: pointer;
+	transition: fill 0.5s;
+	&.hover {
+		fill: #ddd;
+		transition: fill 0s;
+	}
+	&.active {
+		fill: $lightgreen;
+	}
+}
+
+.label, .munic-labels {
+	fill: $deepgreen;
+	fill-opacity: 1;
+	font-size: 20px;
+	font-weight: 300;
+	text-anchor: middle;
+	z-index: 1;
+	pointer-events: none;
+	font-size: 12px;
+}
+
+.municipality {
+	fill: tint($deepgreen, 80%);
+	stroke: #fff;
+	cursor: pointer;
+	transition: fill 0.5s;
+	&.hover {
+		fill: tint($deepgreen, 60%);
+		transition: fill 0s;
+	}
+	&.member {
+		fill: $lightgreen;
+		&.hover {
+			fill: mix($lightgreen, $deepgreen, 75%);
+		}
+	}
+}
+
+/*
+.mesh {
+	fill: none;
+	stroke: #fff;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+
+}
+*/

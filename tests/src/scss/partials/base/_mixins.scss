@@ -1,0 +1,193 @@
+@mixin font-smoothing {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@mixin omega-reset($nth) {
+	&:nth-child(#{$nth}) { margin-right: flex-gutter(); }
+	&:nth-child(#{$nth}+1) { clear: none }
+}
+
+@mixin font( $size: 1.6, $line-height: 1.44 ) {
+	
+	font-size: $size * 10 + px;
+	font-size: $size + rem;
+	line-height: $line-height + em;
+
+}
+
+@mixin proportional( $width: 16, $height: 10, $inner: 'inner' ) {
+	width: 100%;
+	position: relative;
+	&:before {
+		content: " ";
+		display: block;
+		width: 100%;
+		padding-top: ( $height / $width ) * 100%;
+	}
+	#{$inner} {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+}
+
+@mixin inline-block {
+	display: -moz-inline-box;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+}
+
+@mixin transparent($color, $alpha:0.5) {
+	$rgba: rgba($color, $alpha);
+	$ie-hex-str: ie-hex-str($rgba);
+	background-color: transparent;
+	background-color: $rgba;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
+	zoom: 1;
+}
+
+@mixin responsive-visibility($parent) {
+	#{$parent} {
+		display: block !important;
+	}
+	table#{$parent} { display: table; }
+	tr#{$parent} { display: table-row !important; }
+	th#{$parent},
+	td#{$parent} { display: table-cell !important; }
+}
+
+@mixin responsive-invisibility($parent) {
+	#{$parent} {
+		display: none !important;
+	}
+}
+
+@mixin responsive-ghost($parent) {
+	#{$parent} {
+		visibility: hidden;
+	}
+}
+
+
+@mixin group {
+	&:before,&:after{content:"";display:table;}
+	&:after{clear:both;}
+	zoom:1;
+}
+
+@mixin font-smoothing {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@mixin rounded-frame {
+	border-radius: 10px;
+	overflow: hidden;
+	display: block;
+	line-height: 0;
+	background-clip: content-box;
+	transform: translateZ(0); // fixes corner unrounding during animation
+}
+
+@mixin visuallyhidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+@mixin placeholder-color( $color: #CCC ) {
+	::-webkit-input-placeholder {
+		color: $color;
+	}
+	:-moz-placeholder {
+		color: $color;
+	}
+	::-moz-placeholder {
+		color: $color;
+	}
+	:-ms-input-placeholder {
+		color: $color;
+	}
+}
+
+
+
+@mixin margin( $pos: 'all', $size: 5.4  ) {
+	
+	$size_px: $size * 10px;
+	$size_rem: $size + rem;
+
+	@if $pos == 'sides' {
+		margin-left: $size_px;
+		margin-right: $size_px;
+		margin-left: $size_rem;
+		margin-right: $size_rem;
+	}
+	@else if $pos == 'extremal' {
+		margin-top: $size_px;
+		margin-bottom: $size_px;
+		margin-top: $size_rem;
+		margin-bottom: $size_rem;
+	}
+	@else if $pos == 'all' {
+		margin-top: $size_px;
+		margin-top: $size_rem;
+	}
+	@else {	
+		margin-#{$pos}: $size_px;
+		margin-#{$pos}: $size_rem;
+	}
+
+}
+
+@mixin padding( $pos: 'all', $size: 5.4 ) {
+	
+	$size_px: $size * 10px;
+	$size_rem: $size + rem;
+
+	@if $pos == 'sides' {
+		padding-left: $size_px;
+		padding-right: $size_px;
+		padding-left: $size_rem;
+		padding-right: $size_rem;
+	}
+	@else if $pos == 'extremal' {
+		padding-top: $size_px;
+		padding-bottom: $size_px;
+		padding-top: $size_rem;
+		padding-bottom: $size_rem;
+	}
+	@else if $pos == 'all' {
+		padding-top: $size_px;
+		padding-top: $size_rem;
+	}
+	@else {	
+		padding-#{$pos}: $size_px;
+		padding-#{$pos}: $size_rem;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

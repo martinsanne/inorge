@@ -1,0 +1,7 @@
+var mapstyle = [
+  {
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  }
+]
