@@ -51,7 +51,11 @@
 			fill: mix($lightgreen, $deepgreen, 75%);
 		}
 	}
+	&.current {
+		fill: red;
+	}
 }
+
 
 /*
 .mesh {
