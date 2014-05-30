@@ -1,0 +1,17 @@
+.close {
+	position: absolute;
+	text-align: center;
+	width: 40px;
+	height: 40px;
+	background-color: $lightgreen;
+	cursor: pointer;
+	line-height: 40px;
+	border-radius: 50%;
+	top: 30px;
+	right: 30px;
+	font-size: 30px;
+	&:hover {
+		background-color: $deepgreen;
+		color: $lightgreen;
+	}
+}

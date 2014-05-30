@@ -1,0 +1,113 @@
+.member-icon {
+	width: 50px;
+	height: 50px;
+	@include inline-block;
+	background-position: top left;
+	background-image: url('../../images/member.png');
+	background-color: transparent;
+}
+
+#modal {
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	pointer-events: none;
+
+	// main layout
+
+	.content {
+
+		position: absolute;
+		width: 100%;
+		left: 30%;
+		width: 70%;
+		padding: 40px;
+		transform: scale(1.5);
+		transition: transform 0.4s ease;
+		box-sizing: border-box;
+		padding: 40px;
+
+	}
+
+	.background {
+		
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: #FFF;
+		opacity: 0.6;
+		pointer-events: none;
+
+	}
+
+	// content
+
+	.title {
+		margin-bottom: 1em;
+	}
+	.intro {
+		margin-bottom: 2em;
+	}
+	.share-text {
+		margin-bottom: 2em;
+	}
+	.share-links {
+		margin-bottom: 2em;
+		a {
+			margin-right: 15px;
+		}
+	}
+	.links {
+		li {
+			margin-bottom: 0.5em;
+			//padding-left: 1em;
+			//text-indent: -0.7em;
+			&:before {
+				font-size: 1.5em;
+				line-height: 0.5em;
+				position: relative;
+				top: 0.15em;
+				content: "• ";
+    			color: $lightgreen;
+			}
+		}
+	}
+
+	.nonmember {
+
+		.member-icon {
+			background-position: bottom left;
+		}
+
+	}
+
+}
+
+// modal open state
+
+body {
+	&.has-modal {
+		#map-holder {
+			filter: blur(10px);
+		}
+		#modal {
+			opacity: 1;
+			pointer-events: auto;
+			.content {
+				transform: scale(1);
+			}
+		}
+	}	
+}
+
+// transitions
+
+#map-holder, #modal {
+	transition: all 0.4s ease;
+}

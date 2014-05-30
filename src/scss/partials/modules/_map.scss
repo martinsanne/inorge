@@ -5,64 +5,106 @@
 	line-height: 1em;
 	margin: 0;
 	padding: 0;
-}
-.background {
-	fill: none;
-	pointer-events: all;
-}
-
-.feature {
-	stroke: #FFF;
-	fill: tint($deepgreen, 70%);
-	cursor: pointer;
-	transition: fill 0.5s;
-	&.hover {
-		fill: #ddd;
-		transition: fill 0s;
-	}
-	&.active {
-		fill: $lightgreen;
+	.member, .total, .munic-name {
+		color: $lightgreen;
 	}
 }
 
-.label, .munic-labels {
-	fill: $deepgreen;
-	fill-opacity: 1;
-	font-size: 20px;
-	font-weight: 300;
-	text-anchor: middle;
-	z-index: 1;
-	pointer-events: none;
-	font-size: 12px;
-}
+#map-holder {
 
-.municipality {
-	fill: tint($deepgreen, 80%);
-	stroke: #fff;
-	cursor: pointer;
-	transition: fill 0.5s;
-	&.hover {
-		fill: tint($deepgreen, 60%);
-		transition: fill 0s;
+	width: 100%;
+	height: 100%;
+	-webkit-transform: translateZ(0);
+
+	.background {
+		fill: none;
+		pointer-events: all;
 	}
-	&.member {
-		fill: $lightgreen;
+
+	.county {
+
+		fill: #FFF;//tint($deepgreen, 70%);
+		cursor: pointer;
+		transition: fill 0.5s;
 		&.hover {
-			fill: mix($lightgreen, $deepgreen, 75%);
+			fill: $lightgreen !important;
+			transition: fill 0s;
+		}
+		&.active {
+			fill: $lightgreen;
 		}
 	}
-	&.current {
-		fill: red;
+
+	.county, .municipality {
+		stroke: shade($lightgreen, 20%);
+		stroke-linecap: round;
+		stroke-linejoin: round;
 	}
+
+	.label, .munic-labels {
+		fill: $deepgreen;
+		fill-opacity: 1;
+		font-size: 20px;
+		font-weight: 300;
+		text-anchor: middle;
+		z-index: 1;
+		pointer-events: none;
+		font-size: 12px;
+		/*text-shadow:
+			-1px -1px 0 #FFF,
+			1px -1px 0 #FFF,
+			-1px 1px 0 #FFF,
+			1px 1px 0 #FFF;*/
+	}
+
+	.municipality {
+		fill: tint($deepgreen, 90%);
+		cursor: pointer;
+		transition: fill 0.5s;
+		&.hover {
+			fill: $lightgreen;
+			transition: fill 0s;
+			//transform: scale(2);
+		}
+		&.member {
+			fill: $lightgreen;
+			&.hover {
+				fill: mix($lightgreen, $deepgreen, 75%);
+			}
+		}
+		&.current {
+			//fill: red;
+		}
+	}
+
+	.mesh {
+		display: none;
+		fill: none;
+		stroke: #fff;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+
+	}
+
+	.shade-1 {
+		fill: tint($lightgreen, 80% );
+	}
+	.shade-2 {
+		fill: tint($lightgreen, 60% );
+	}
+	.shade-3 {
+		fill: tint($lightgreen, 40% );
+	}
+	.shade-4 {
+		fill: tint($lightgreen, 20% );
+	}
+	.shade-5 { // full
+		fill: $lightgreen;
+	}
+
 }
 
 
-/*
-.mesh {
-	fill: none;
-	stroke: #fff;
-	stroke-linecap: round;
-	stroke-linejoin: round;
 
-}
-*/
+
+

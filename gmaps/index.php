@@ -7,8 +7,8 @@
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<link rel="stylesheet" href="dist/css/style.css">
-		<script src="dist/js/vendor/modernizr-2.8.0.min.js"></script>
+		<link rel="stylesheet" href="../dist/css/style.css">
+		<script src="../dist/js/vendor/modernizr-2.8.0.min.js"></script>
 
 	</head>
 	<body>
@@ -65,9 +65,7 @@
 		<script>window.jQuery || document.write('<script src="dist/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
 		
 		<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDr6ulBdJNgZjvIG4Zpg65wycnpJ3COeyY&amp;sensor=false"></script>
-		<!--<script src="json/counties.topo.json"></script>
-		<script src="json/municipalities.topo.json"></script>-->
-		<script src="assets/off.json"></script>
+		<script src="../assets/off.json"></script>
 		<script src="dist/js/main.js"></script>
 
 	</body>

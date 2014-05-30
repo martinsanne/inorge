@@ -12,7 +12,7 @@
 
 	
 	function loadAllMunicipalities() {
-		$.getJSON( 'json/nko.json', function( data ) {
+		$.getJSON( '../json/nko.json', function( data ) {
 			alleKommuner = data;
 		});
 	}
@@ -44,7 +44,7 @@
 	}
 
 	function getMembersMunic() {
-		var jsonUrl = 'json/member_municipalities.json';
+		var jsonUrl = '../json/member_municipalities.json';
 		$.getJSON( jsonUrl, function( data ) {
 			for (var i=0; i<data.length; i++) {
 				var object = data[i],
@@ -61,7 +61,7 @@
 
 	function buildCountyList(data) {
 
-		var geo = data.objects.counties.geometries,
+		var geo = data.objects.counties_clean.geometries,
 			build = '',
 			chosen_build = '',
 			$chosen = $('select.chosen');
@@ -69,11 +69,9 @@
 		for (var i = 0; i < geo.length; i++ ) {
 		
 			var county = geo[i];
-			build += '<li id="'+county.properties.FylkeNr+'"><label><input name="county" type="checkbox" value="'+county.properties.FylkeNr+'">'+county.properties.NAVN+'</label></li>';
-			
-			//addMapMarker( county.properties.lat, county.properties.lon, county.properties.FylkeNr );
+			build += '<li id="'+county.id+'"><label><input name="county" type="checkbox" value="'+county.id+'">'+county.properties.name+'</label></li>';
 
-			chosen_build += '<option calue="'+county.properties.FylkeNr+'">'+county.properties.NAVN+'</option>';
+			chosen_build += '<option calue="'+county.id+'">'+county.properties.name+'</option>';
 
 		}
 		
@@ -205,7 +203,7 @@
 		});
 
 		map.data.addListener('mouseover', function(event) {
-			$('.circle .name').html( event.feature.getProperty('NAVN') );
+			$('.circle .name').html( event.feature.getProperty('name') );
 			event.feature.setProperty('hover', true);
 		});
 
@@ -213,8 +211,6 @@
 			event.feature.setProperty('hover', false);
 			$('.circle .name').html('');
 		});
-
-		console.log( parentCounty );
 
 		$('.close').show();
 
@@ -230,10 +226,8 @@
 		map.data.setMap(map);
 
 		// set new layer
-		var geoJsonObject = topojson.feature(geojsondata, geojsondata.objects.counties);
-		map.data.addGeoJson( geoJsonObject, {
-			'idPropertyName' : 'FylkeNr'
-		});
+		var geoJsonObject = topojson.feature(geojsondata, geojsondata.objects.counties_clean);
+		map.data.addGeoJson( geoJsonObject );
 
 		/*
 		var j=0;
@@ -246,7 +240,7 @@
 
 		map.data.addListener('mouseover', function(event) {
 			//console.log( event.feature.getProperty('NAVN') );
-			$('.circle .name').html( event.feature.getProperty('NAVN') );
+			$('.circle .name').html( event.feature.getProperty('name') );
 			event.feature.setProperty('hover', true);
 		});
 
@@ -258,19 +252,19 @@
 		map.data.addListener('click', function(event) {
 
 			var feature = event.feature,
-				fylkenr = feature.getProperty('FylkeNr'),
+				fylkenr = feature.getId(),
 				municTopojson = {
 					geometries: [],
 					type: "GeometryCollection"
 				};
 
-			var children_ids = municipalitiesInCounty( fylkenr, feature.getProperty('NAVN') ),
-				allMunicGeometries = geojsondata.objects.municipalities.geometries;
+			var children_ids = municipalitiesInCounty( fylkenr, feature.getProperty('name') ),
+				allMunicGeometries = geojsondata.objects.municipalities_clean.geometries;
 
 			for ( var prop in allMunicGeometries ) {
 				var currentMunic = allMunicGeometries[prop];
 				for (var i=0; i<children_ids.length; i++) {
-					if (currentMunic.properties['KOMM']==children_ids[i]) {
+					if (currentMunic.id==children_ids[i]) {
 						municTopojson.geometries.push(currentMunic);
 					}
 				}
@@ -291,7 +285,7 @@
 
 		// https://developers.google.com/maps/documentation/javascript/3.exp/reference#Data
 		
-		$.getJSON('json/norway.json', function(data){
+		$.getJSON('../json/norway.json', function(data){
 			
 			geojsondata = data;
 

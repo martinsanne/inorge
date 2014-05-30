@@ -1244,520 +1244,393 @@ function FastClick(a){"use strict";var b,c=this;if(this.trackingClick=!1,this.tr
 /*! http://mths.be/placeholder v2.0.7 by @mathias */
 !function(a,b,c){function d(a){var b={},d=/^jQuery\d+$/;return c.each(a.attributes,function(a,c){c.specified&&!d.test(c.name)&&(b[c.name]=c.value)}),b}function e(a,d){var e=this,f=c(e);if(e.value==f.attr("placeholder")&&f.hasClass("placeholder"))if(f.data("placeholder-password")){if(f=f.hide().next().show().attr("id",f.removeAttr("id").data("placeholder-id")),a===!0)return f[0].value=d;f.focus()}else e.value="",f.removeClass("placeholder"),e==b.activeElement&&e.select()}function f(){var a,b=this,f=c(b),g=this.id;if(""==b.value){if("password"==b.type){if(!f.data("placeholder-textinput")){try{a=f.clone().attr({type:"text"})}catch(h){a=c("<input>").attr(c.extend(d(this),{type:"text"}))}a.removeAttr("name").data({"placeholder-password":!0,"placeholder-id":g}).bind("focus.placeholder",e),f.data({"placeholder-textinput":a,"placeholder-id":g}).before(a)}f=f.removeAttr("id").hide().prev().attr("id",g).show()}f.addClass("placeholder"),f[0].value=f.attr("placeholder")}else f.removeClass("placeholder")}var g,h,i="placeholder"in b.createElement("input"),j="placeholder"in b.createElement("textarea"),k=c.fn,l=c.valHooks;i&&j?(h=k.placeholder=function(){return this},h.input=h.textarea=!0):(h=k.placeholder=function(){var a=this;return a.filter((i?"textarea":":input")+"[placeholder]").not(".placeholder").bind({"focus.placeholder":e,"blur.placeholder":f}).data("placeholder-enabled",!0).trigger("blur.placeholder"),a},h.input=i,h.textarea=j,g={get:function(a){var b=c(a);return b.data("placeholder-enabled")&&b.hasClass("placeholder")?"":a.value},set:function(a,d){var g=c(a);return g.data("placeholder-enabled")?(""==d?(a.value=d,a!=b.activeElement&&f.call(a)):g.hasClass("placeholder")?e.call(a,!0,d)||(a.value=d):a.value=d,g):a.value=d}},i||(l.input=g),j||(l.textarea=g),c(function(){c(b).delegate("form","submit.placeholder",function(){var a=c(".placeholder",this).each(e);setTimeout(function(){a.each(f)},10)})}),c(a).bind("beforeunload.placeholder",function(){c(".placeholder").each(function(){this.value=""})}))}(this,document,jQuery);
 
-(function($,window,document,undefined){
+!function(){function t(n,t){function r(t){var r,e=n.arcs[0>t?~t:t],o=e[0];return n.transform?(r=[0,0],e.forEach(function(n){r[0]+=n[0],r[1]+=n[1]})):r=e[e.length-1],0>t?[r,o]:[o,r]}function e(n,t){for(var r in n){var e=n[r];delete t[e.start],delete e.start,delete e.end,e.forEach(function(n){o[0>n?~n:n]=1}),f.push(e)}}var o={},i={},u={},f=[],c=-1;return t.forEach(function(r,e){var o,i=n.arcs[0>r?~r:r];i.length<3&&!i[1][0]&&!i[1][1]&&(o=t[++c],t[c]=r,t[e]=o)}),t.forEach(function(n){var t,e,o=r(n),f=o[0],c=o[1];if(t=u[f])if(delete u[t.end],t.push(n),t.end=c,e=i[c]){delete i[e.start];var a=e===t?t:t.concat(e);i[a.start=t.start]=u[a.end=e.end]=a}else i[t.start]=u[t.end]=t;else if(t=i[c])if(delete i[t.start],t.unshift(n),t.start=f,e=u[f]){delete u[e.end];var s=e===t?t:e.concat(t);i[s.start=e.start]=u[s.end=t.end]=s}else i[t.start]=u[t.end]=t;else t=[n],i[t.start=f]=u[t.end=c]=t}),e(u,i),e(i,u),t.forEach(function(n){o[0>n?~n:n]||f.push([n])}),f}function r(n,r,e){function o(n){var t=0>n?~n:n;(s[t]||(s[t]=[])).push({i:n,g:a})}function i(n){n.forEach(o)}function u(n){n.forEach(i)}function f(n){"GeometryCollection"===n.type?n.geometries.forEach(f):n.type in l&&(a=n,l[n.type](n.arcs))}var c=[];if(arguments.length>1){var a,s=[],l={LineString:i,MultiLineString:u,Polygon:u,MultiPolygon:function(n){n.forEach(u)}};f(r),s.forEach(arguments.length<3?function(n){c.push(n[0].i)}:function(n){e(n[0].g,n[n.length-1].g)&&c.push(n[0].i)})}else for(var h=0,p=n.arcs.length;p>h;++h)c.push(h);return{type:"MultiLineString",arcs:t(n,c)}}function e(r,e){function o(n){n.forEach(function(t){t.forEach(function(t){(f[t=0>t?~t:t]||(f[t]=[])).push(n)})}),c.push(n)}function i(n){return l(u(r,{type:"Polygon",arcs:[n]}).coordinates[0])>0}var f={},c=[],a=[];return e.forEach(function(n){"Polygon"===n.type?o(n.arcs):"MultiPolygon"===n.type&&n.arcs.forEach(o)}),c.forEach(function(n){if(!n._){var t=[],r=[n];for(n._=1,a.push(t);n=r.pop();)t.push(n),n.forEach(function(n){n.forEach(function(n){f[0>n?~n:n].forEach(function(n){n._||(n._=1,r.push(n))})})})}}),c.forEach(function(n){delete n._}),{type:"MultiPolygon",arcs:a.map(function(e){var o=[];if(e.forEach(function(n){n.forEach(function(n){n.forEach(function(n){f[0>n?~n:n].length<2&&o.push(n)})})}),o=t(r,o),(n=o.length)>1)for(var u,c=i(e[0][0]),a=0;n>a;++a)if(c===i(o[a])){u=o[0],o[0]=o[a],o[a]=u;break}return o})}}function o(n,t){return"GeometryCollection"===t.type?{type:"FeatureCollection",features:t.geometries.map(function(t){return i(n,t)})}:i(n,t)}function i(n,t){var r={type:"Feature",id:t.id,properties:t.properties||{},geometry:u(n,t)};return null==t.id&&delete r.id,r}function u(n,t){function r(n,t){t.length&&t.pop();for(var r,e=s[0>n?~n:n],o=0,i=e.length;i>o;++o)t.push(r=e[o].slice()),a(r,o);0>n&&f(t,i)}function e(n){return n=n.slice(),a(n,0),n}function o(n){for(var t=[],e=0,o=n.length;o>e;++e)r(n[e],t);return t.length<2&&t.push(t[0].slice()),t}function i(n){for(var t=o(n);t.length<4;)t.push(t[0].slice());return t}function u(n){return n.map(i)}function c(n){var t=n.type;return"GeometryCollection"===t?{type:t,geometries:n.geometries.map(c)}:t in l?{type:t,coordinates:l[t](n)}:null}var a=g(n.transform),s=n.arcs,l={Point:function(n){return e(n.coordinates)},MultiPoint:function(n){return n.coordinates.map(e)},LineString:function(n){return o(n.arcs)},MultiLineString:function(n){return n.arcs.map(o)},Polygon:function(n){return u(n.arcs)},MultiPolygon:function(n){return n.arcs.map(u)}};return c(t)}function f(n,t){for(var r,e=n.length,o=e-t;o<--e;)r=n[o],n[o++]=n[e],n[e]=r}function c(n,t){for(var r=0,e=n.length;e>r;){var o=r+e>>>1;n[o]<t?r=o+1:e=o}return r}function a(n){function t(n,t){n.forEach(function(n){0>n&&(n=~n);var r=o[n];r?r.push(t):o[n]=[t]})}function r(n,r){n.forEach(function(n){t(n,r)})}function e(n,t){"GeometryCollection"===n.type?n.geometries.forEach(function(n){e(n,t)}):n.type in u&&u[n.type](n.arcs,t)}var o={},i=n.map(function(){return[]}),u={LineString:t,MultiLineString:r,Polygon:r,MultiPolygon:function(n,t){n.forEach(function(n){r(n,t)})}};n.forEach(e);for(var f in o)for(var a=o[f],s=a.length,l=0;s>l;++l)for(var h=l+1;s>h;++h){var p,v=a[l],g=a[h];(p=i[v])[f=c(p,g)]!==g&&p.splice(f,0,g),(p=i[g])[f=c(p,v)]!==v&&p.splice(f,0,v)}return i}function s(n,t){function r(n){u.remove(n),n[1][2]=t(n),u.push(n)}var e,o=g(n.transform),i=m(n.transform),u=v(),f=0;for(t||(t=h),n.arcs.forEach(function(n){var r=[];n.forEach(o);for(var i=1,f=n.length-1;f>i;++i)e=n.slice(i-1,i+2),e[1][2]=t(e),r.push(e),u.push(e);n[0][2]=n[f][2]=1/0;for(var i=0,f=r.length;f>i;++i)e=r[i],e.previous=r[i-1],e.next=r[i+1]});e=u.pop();){var c=e.previous,a=e.next;e[1][2]<f?e[1][2]=f:f=e[1][2],c&&(c.next=a,c[2]=e[2],r(c)),a&&(a.previous=c,a[0]=e[0],r(a))}return n.arcs.forEach(function(n){n.forEach(i)}),n}function l(n){for(var t,r=-1,e=n.length,o=n[e-1],i=0;++r<e;)t=o,o=n[r],i+=t[0]*o[1]-t[1]*o[0];return.5*i}function h(n){var t=n[0],r=n[1],e=n[2];return Math.abs((t[0]-e[0])*(r[1]-t[1])-(t[0]-r[0])*(e[1]-t[1]))}function p(n,t){return n[1][2]-t[1][2]}function v(){function n(n,t){for(;t>0;){var r=(t+1>>1)-1,o=e[r];if(p(n,o)>=0)break;e[o._=t]=o,e[n._=t=r]=n}}function t(n,t){for(;;){var r=t+1<<1,i=r-1,u=t,f=e[u];if(o>i&&p(e[i],f)<0&&(f=e[u=i]),o>r&&p(e[r],f)<0&&(f=e[u=r]),u===t)break;e[f._=t]=f,e[n._=t=u]=n}}var r={},e=[],o=0;return r.push=function(t){return n(e[t._=o]=t,o++),o},r.pop=function(){if(!(0>=o)){var n,r=e[0];return--o>0&&(n=e[o],t(e[n._=0]=n,0)),r}},r.remove=function(r){var i,u=r._;if(e[u]===r)return u!==--o&&(i=e[o],(p(i,r)<0?n:t)(e[i._=u]=i,u)),u},r}function g(n){if(!n)return y;var t,r,e=n.scale[0],o=n.scale[1],i=n.translate[0],u=n.translate[1];return function(n,f){f||(t=r=0),n[0]=(t+=n[0])*e+i,n[1]=(r+=n[1])*o+u}}function m(n){if(!n)return y;var t,r,e=n.scale[0],o=n.scale[1],i=n.translate[0],u=n.translate[1];return function(n,f){f||(t=r=0);var c=0|(n[0]-i)/e,a=0|(n[1]-u)/o;n[0]=c-t,n[1]=a-r,t=c,r=a}}function y(){}var d={version:"1.6.8",mesh:function(n){return u(n,r.apply(this,arguments))},meshArcs:r,merge:function(n){return u(n,e.apply(this,arguments))},mergeArcs:e,feature:o,neighbors:a,presimplify:s};"function"==typeof define&&define.amd?define(d):"object"==typeof module&&module.exports?module.exports=d:this.topojson=d}();
+(function($,document,window,undefined){
+
+	var map,
+		Modernizr = window.Modernizr,
+		google = window.google,
+		curFeature,
+		$countyList = $('<ul class="county"></ul>'),
+		allowedBounds,
+		$drawer = $('#drawer').find('.guts'),
+		geojsondata,
+		alleKommuner;
 
-	var $window = $(window),
-		$html = $('html'),
-		width = 550,
-		height = 780,
-		active = d3.select(null),
-		aspect = 550 / 780;
-
-
-	// Move Norway into position
-	var projection = d3.geo.albers()
-		.rotate([-9,-10])
-		.center([13, 65]) // center of norway
-		.parallels( [65.0, 68.0] )
-		.scale(3000)
-		.translate([420, -150]);
-
-
-	var path = d3.geo.path()
-		.projection(projection);
-
-	// add map svg
-	var svg = d3.select("#map-holder").append("svg")
-		.attr("width", width)
-		.attr("height", height)
-		.attr('viewBox', '0 0 '+width+' '+height+'');
-
-	svg.append("rect")
-		.attr("class", "background")
-		.attr("width", "100%")
-		.attr("height", "100%")
-		.on("click", resetMapView);
-
-	var g = svg.append("g")
-		.attr("id", "norway")
-		.attr("class", "country")
-		.style("stroke-width", "1px");
-
-	var close_button = d3.selectAll('.map-close').classed('hidden', true);
-
-	close_button.on('click', function(){
-		resetMapView();
-	});
-
-
-	/*
-	HELPER FUNCTIONS
-	*/
-
-	// find a way to combine these
-	function isMember(munic_id) {
-		for (var i=0; i<member_municipalities.length; i++) {
-			var current_munic = member_municipalities[i];
-			if ( munic_id === parseInt(current_munic.municipality_code,10) ) {
-				return ( parseInt(current_munic.membership_type,10) !== 0 );
-				//return true;
-			}
-
-		}
-		return false;
-	}
-
-	function companyCount(munic_id) {
-		for (var i=0; i<member_municipalities.length; i++) {
-			var current_munic = member_municipalities[i];
-			if ( munic_id === parseInt(current_munic.municipality_code,10) ) {
-				return current_munic.member_companies;
-			}
-
-		}
-		return 0;
-	}
-
-
-
-
-
-	function componentToHex(c) {
-	    var hex = c.toString(16);
-	    return hex.length == 1 ? "0" + hex : hex;
-	}
-
-
-	function rgbToHex(r, g, b) {
-	    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-	}
-
-
-	function colorFromTo(percent_decimal) {
-		if (percent_decimal===0) {
-			return '#CCDCD8';
-		}
-		var color_from = [188,218,145], //rgba(61, 61, 64, 1);
-			color_to = [143,194,71],
-			opacity = 1 - percent_decimal,
-			r = Math.round( (color_from[0] * opacity) + (color_to[0] * percent_decimal ) ),
-			g = Math.round( (color_from[1] * opacity) + (color_to[1] * percent_decimal ) ),
-			b = Math.round( (color_from[2] * opacity) + (color_to[2] * percent_decimal ) );
-		return rgbToHex(r,g,b);
-	}
-
-
-	/*
-	GLOBAL MAP DATA VARIABLES
-	*/
-
-	var topology,
-		member_municipalities,
-		relations = {},
-		current_munic;
-
-	/*
-	LOAD MEMBER MUNICIPALITIES
-	*/
-
-	d3.json("json/member_municipalities_new.json", function(error, data) {
-		member_municipalities = data;
-		d3.json("json/norway.json", mapDataLoaded);
-	});
-
-	/*
-	LOAD MAP DATA
-	*/
-
-
-	function buildMunicipalityTextContent() {
-
-
-
-	}
-
-	function replaceAll(find, replace, str) {
-		return str.replace(new RegExp(find, 'g'), replace);
-	}
-
-
-	function goToMunicipality(muni_id) {
-
-		if (current_munic) {
-			current_munic.classed('current', false);
-		}
-
-		current_munic = d3.select("#m-" + muni_id).classed('current', true);
-
-		var data = current_munic.data()[0],
-			key = (data.properties.member) ? 'member' : 'nonmember';
-
-		// set modal content
-		
-		var template = $('#template').html(),
-			links_array = cms.extra_links,
-			title = replaceAll('%kommune%', data.properties.name, cms.texts[key].title),
-			intro = replaceAll('%kommune%', data.properties.name, cms.texts[key].intro),
-			share = replaceAll('%kommune%', data.properties.name, cms.texts[key].share),
-			links = '',
-			companies = replaceAll('%antall%', data.properties.companies, cms.global.companies),
-			enc_share_url = encodeURIComponent('http://gpunkt.no/kommune/' + data.properties.name +'/'),
-			tweet_text = cms.texts[key].tweet,
-			twitter_url = '<a class="twitter" href="https://twitter.com/share?url='+enc_share_url+'&text='+tweet_text+'" target="_blank">Twitter</a>',
-			facebook_url = '<a class="facebook" href="http://www.facebook.com/sharer.php?u='+enc_share_url+'" target="_blank">Facebook</a>',
-			google_url = '<a class="google" href="https://plus.google.com/share?url='+enc_share_url+'" target="_blank">Google+</a>',
-			//mail_url = '<a class="mail" href="mailto:?title='+cms.texts[key].tweet+'">E-post</a>',
-			share_links = twitter_url+facebook_url+google_url;
-
-		for (var i=0; i<links_array.length; i++) {
-			links += '<li><a target="_blank" href="'+ replaceAll('%kommune%', data.properties.name, links_array[i].url) +'">'+links_array[i].text+'</a></li>';
-		}
-
-		companies = replaceAll('%kommune%', data.properties.name, companies);
-
-		template = replaceAll('%title%', title, template);
-		template = replaceAll('%intro%', intro, template);
-		template = replaceAll('%share%', share, template);
-		template = replaceAll('%links%', links, template);
-		template = replaceAll('%companies%', companies, template);
-
-		template = replaceAll('%share_links%', share_links, template);
-
-		template = '<div class="'+key+'">'+template+'</div>';
-
-		/*
-
-		SHARING:
-		
-		var share_url = 'http://gpunkt.no/kommune/' + data.properties.name +'/'
-		enc_share_url = encodeURIComponent(share_url)
-
-		<a class="twitter" href="https://twitter.com/share?url='+enc_share_url+'&text='+tweet_text+'" target="_blank">Twitter</a>
-		<a class="facebook" href="http://www.facebook.com/sharer.php?u='+enc_share_url+'" target="_blank">Facebook</a>
-		<a class="google" href="https://plus.google.com/share?url='+enc_share_url+'" target="_blank">Google+</a>
-
-		*/
-
-		$('#modal .content').html(template);
-
-		$("body").toggleClass("has-modal");
-
-	}
-
-
-	$('#modal').on('click', '.close', function(){
-		$("body").removeClass("has-modal");
-	});
-
-
-	function mapDataLoaded(error, data) {
-
-		if (error) throw error;
-
-		topology = data;
-
-		var county_features = topojson.feature(topology, topology.objects.counties_clean).features,
-			municipality_features = topojson.feature(topology, topology.objects.municipalities_clean).features;
-
-		/*
-		SET MEMBER COUNTS AND RELATIONS
-		*/
-
-		var member_count = {},
-			chosenbuild = '<select id="municipality-selector" data-placeholder="Velg kommune"><option></option>';
-
-		for (var i=0; i<municipality_features.length; i++) {
-			var muni = municipality_features[i],
-				parent_id = muni.properties.county_id;
-			if (!member_count[muni.properties.county_id]) {
-				member_count[muni.properties.county_id] = {
-					'total': 0,
-					'member': 0,
-					'nonmember': 0
-				};
-			}
-			member_count[muni.properties.county_id].total += 1;
-			if (isMember(muni.id)) {
-				member_count[muni.properties.county_id].member += 1;
-			}else{
-				member_count[muni.properties.county_id].nonmember += 1;
-			}
-			relations[muni.id] = parent_id;
-			chosenbuild += '<option value="'+muni.id+'">'+muni.properties.name+'</option>';
-		}
-
-		chosenbuild += '<select>';
-
-		/*
-		BUILD SELECT LIST
-		*/
-
-		var $chosen = $(chosenbuild)
-			.appendTo('.chosen-wrap')
-			.chosen()
-			.on('change', function(event){
-			
-				var muni_id = $(this).val(),
-					parent_id = relations[muni_id],
-					county = d3.select("#c-" + parent_id).data()[0]; // get the data object
-
-				goToCounty(county);
-				
-				goToMunicipality(muni_id);
-				
-			});
-
-		/*
-		BUILD MAP - COUNTY LEVEL
-		*/
-
-		g.selectAll("path")
-			.data(county_features)
-			.enter()
-			.append("path")
-			.attr("d", path)
-			.attr("id", function(d) { return "c-" + d.id; })
-			.attr("class", function(d){
-				// var percent = Math.ceil( (member_count[d.id].member / member_count[d.id].total) * 100 ) / 100,
-				// split into five categories (percentage is too precise)
-				var share = Math.ceil( (member_count[d.id].member / member_count[d.id].total) * 5 ),
-					colorClass = 'shade-' + share;
-				d.properties.members = member_count[d.id];
-				return "county "+colorClass;
-			})
-			/*
-			.style("fill", function(d){
-				var percent = Math.ceil( (member_count[d.id].member / member_count[d.id].total) * 100 ) / 100,
-					color = colorFromTo(percent);
-				// set members for future use
-				d.properties.members = member_count[d.id];
-				return color;
-			})
-			*/
-			.on("mouseover", function(d){
-				d3.select(this).classed("hover", true);
-			})
-			.on("mouseout", function(d){
-				d3.select(this).classed("hover", false);
-			})
-			.on("click", goToCounty);
-
-		
-		g.append("path")
-			.datum(topojson.mesh(data, data.objects.municipalities_clean, function(a, b) { return a !== b; }))
-			.style("stroke-width", "0.3px")
-			.style("opacity", "0.25")
-			.attr("class", "mesh")
-			.attr("d", path);
-
-		/*
-		ADD LABELS
-		*/
-		// http://stackoverflow.com/questions/17425268/d3js-automatic-labels-placement-to-avoid-overlaps-force-repulsion
-
-		g.append("g")
-			.attr("class", "county-labels" )
-			.selectAll("text")
-			.data(county_features)
-			.enter().append("text")
-			.attr("class", function(d) { return "label label-" + d.id; })
-			.attr("transform", function(d) { return "translate(" + path.centroid(d) + ")"; })
-			.attr("dx", function(d){
-				if ( d.properties.name === 'Hedmark' ) {
-					return "2em";
-				}
-				if ( d.properties.name === 'Sogn og Fjordane' ) {
-					return "-3em";
-				}
-				if ( d.properties.name === 'Akershus' ) {
-					return "2em";
-				}
-				if ( d.properties.name === 'Østfold' ) {
-					return "2em";
-				}
-			})
-			.attr("dy", function(d){
-				if ( d.properties.name === 'Akershus' ) {
-					return "-1em";
-				}
-			})
-			.text(function(d) { return d.properties.name; });
-
-	}
-
-	function goToCounty(d) {
-
-		//if (active.node() === this) return resetMapView();
-
-		/*
-		REMOVE CURRENT MUNICIPALITY
-		*/
-		
-		g.selectAll(".municipalities").remove();
-		g.selectAll(".munic-labels").remove();
-
-		close_button.classed('hidden', false);
-
-		// remove active class from current and set new
-		//active.classed("active", false);
-		//active = d3.select(this).classed("active", true);
-
-		// get bounds of the current path
-		var bounds = path.bounds(d),
-			dx = bounds[1][0] - bounds[0][0],
-			dy = bounds[1][1] - bounds[0][1],
-			x = (bounds[0][0] + bounds[1][0]) / 2,
-			y = (bounds[0][1] + bounds[1][1]) / 2,
-			scale = .9 / Math.max(dx / width, dy / height),
-			translate = [width / 2 - scale * x, height / 2 - scale * y];
-
-		// make the transition
-		g.transition()
-			.duration(500)
-			.style("stroke-width", 1 / scale + "px")
-			.attr("transform", "translate(" + translate + ")scale(" + scale + ")");
-		
-		// hide labels
-		g.selectAll('.county-labels').transition()
-			.duration(500)
-			//.style('font-size', 12 / scale + "px");
-			.style('opacity', '0');
-
-			
-		// set current county info
-		var county_info = 'I <span class="munic-name">' + d.properties.name + '</span> fylke er ',
-			member_munics = d.properties.members.member,
-			total_munics = d.properties.members.total;
-		if ( member_munics == total_munics && total_munics == 1 ) {
-			county_info = d.properties.name + ' kommune er medlem';
-		}else if ( member_munics > 0 ) {
-			county_info += '<span class="member">' + member_munics + '</span> av <span class="total">' + total_munics + '</span> kommuner medlem';
-		}else{
-			county_info += '<span class="none">INGEN</span> kommuner medlem :(';
-		}
-
-		d3.select('.current-county').html(county_info);
-
-		// add municipalities
-		var county_id = d.id,
-			municipality_data = topojson.feature(topology, topology.objects.municipalities_clean).features.filter(function(d){
-				// return only municipalities within selected county
-				d.properties.member = isMember(d.id);
-				d.properties.companies = companyCount(d.id);
-				//d.properties.companies = d.properties.member_companies;
-				return county_id == d.properties.county_id;
-			});
-
-		g.append("g")
-			.attr("id", "municipalities-" + county_id )
-			.attr("class", "municipalities" )
-			.selectAll("path")
-			.data(municipality_data)
-			.enter()
-			.append("path")
-			.attr("id", function(d) { return "m-" + d.id; })
-			.attr("class", function(d){
-				var memberclass = d.properties.member ? " member" : "";
-				return "municipality" + memberclass;
-			})
-			.on('click', function(d){
-				goToMunicipality(d.id);
-			})
-			.on("mouseover", function(d){
-				d3.select(this).classed("hover", true);
-			})
-			.on("mouseout", function(d){
-				d3.select(this).classed("hover", false);
-			})
-			.attr("d", path)
-			.style("stroke-width", 1 / scale + "px")
-			.style('opacity', "0")
-			.transition()
-			.duration(500)
-			.style('opacity', "1");
-
-		// add labels to municipalities
-		g.append("g")
-			.attr("class", "munic-labels" )
-			.selectAll("text")
-			.data(municipality_data)
-			.enter()
-			.append("text")
-			.attr("class", function(d) { return "munic-label label-" + d.id; })
-			.attr("transform", function(d) { return "translate(" + path.centroid(d) + ")"; })
-			.attr("dx", function(d){
-				if ( d.properties.name === 'Sør-Fron' ) {
-					return "2em";
-				}
-			})
-			.attr("dy", function(d){
-				if ( d.properties.name === 'Etnedal' ) {
-					return "-1em";
-				}
-				if ( d.properties.name === 'Søndre Land' ) {
-					return "-1em";
-				}
-				if ( d.properties.name === 'Sør-Fron' ) {
-					return "2em";
-				}
-			})
-			.style('font-size', 12 / scale + "px")
-			.text(function(d) { return d.properties.name; });
-
-	}
-
-
-	function resetMapView() {
-
-		// remove active class from all elements
-		active.classed("active", false);
-		active = d3.select(null);
-
-		close_button.classed('hidden', true);
-
-		d3.select('.current-county').text('Er din kommune grønn?');
-
-		g.selectAll(".municipalities").remove();
-		g.selectAll(".munic-labels").remove();
-
-		// go back to initial state
-		g.transition()
-			.duration(500)
-			.style("stroke-width", "1px")
-			.attr("transform", "");
-
-		g.selectAll('.county-labels').transition()
-			.duration(500)
-			.style('opacity', '1');
-
-		$("body").removeClass("has-modal");
-
-	}
-
-	function closeOnEscape(event) {
-		var key = (event.keyCode) ? event.keyCode : event.which;
-		if (key===27) {
-			resetMapView();
-		}
-	}
-
-	$html.on('keyup', closeOnEscape);
 	
-	/*	
-	$window.on('resize', function(){
-
-		width = $window.width();
-		height = $window.height();
-
-		svg
-			.attr("width", width)
-			.attr("height", height * aspect );
-
-	});
-	*/
-
-	if ( $('#app').data('county') ) {
-		var countyname = $('#app').data('county');
+	function loadAllMunicipalities() {
+		$.getJSON( '../json/nko.json', function( data ) {
+			alleKommuner = data;
+		});
 	}
 
-})(jQuery,window,document);
+	loadAllMunicipalities();
+
+
+	function municipalitiesInCounty(countyId, countyName) {
+
+		var collector = [],
+			stringen = '<div><h2>Kommuner i '+countyName+'</h2><ul>';
+		
+		for (var id in alleKommuner) {
+
+			var kommune = alleKommuner[id],
+				fylkeId = kommune.parent_area;
+
+			if ( fylkeId  == countyId ) {
+				collector.push(kommune.id);
+				stringen += '<li>'+kommune.name+'</li>';
+			}
+			
+		}
+
+		stringen += '</ul></div>';
+		$drawer.html( stringen );
+		return collector;
+	
+	}
+
+	function getMembersMunic() {
+		var jsonUrl = '../json/member_municipalities.json';
+		$.getJSON( jsonUrl, function( data ) {
+			for (var i=0; i<data.length; i++) {
+				var object = data[i],
+					featureId = parseInt( object.municipality_code , 10 ) + '',
+					feature = map.data.getFeatureById( featureId );
+
+				if (feature) {
+
+					feature.setProperty('member', true);
+				}
+			}
+		});
+	}
+
+	function buildCountyList(data) {
+
+		var geo = data.objects.counties_clean.geometries,
+			build = '',
+			chosen_build = '',
+			$chosen = $('select.chosen');
+
+		for (var i = 0; i < geo.length; i++ ) {
+		
+			var county = geo[i];
+			build += '<li id="'+county.id+'"><label><input name="county" type="checkbox" value="'+county.id+'">'+county.properties.name+'</label></li>';
+
+			chosen_build += '<option calue="'+county.id+'">'+county.properties.name+'</option>';
+
+		}
+		
+		$countyList.html( build )
+		.on('change', 'input[type=checkbox]', function(){
+
+			var $this = $(this),
+				feat = map.data.getFeatureById( $this.val() );
+
+			if (curFeature) {
+				$('#' + curFeature.getId() + ' input[type=checkbox]' ).removeAttr('checked');
+				removeFeatureSelect(curFeature);
+				curFeature = false;
+			}
+
+			if ( $this.is(':checked') ) {
+				setFeatureSelect(feat);
+			}
+
+		})
+		.on('mouseenter', 'li', function(){
+			var id = $(this).attr('id'),
+				feature = map.data.getFeatureById(id);
+			feature.setProperty('hover', true);
+		})
+		.on('mouseleave', 'li', function(){
+			var id = $(this).attr('id'),
+				feature = map.data.getFeatureById(id);
+			feature.setProperty('hover', false);
+		});
+		//.prependTo('.map-tools');
+
+
+		$chosen
+			.html(chosen_build)
+			.chosen();
+
+
+	}
+
+	function removeFeatureSelect(feature, uncheck) {
+
+		feature.setProperty('selected', false);
+		$('.location-desc').html('');
+		$('.location-title').html('');
+		
+		if (uncheck) {
+			$countyList.find('input[type=checkbox]').removeAttr('checked');
+		}
+
+	}
+
+	function setFeatureSelect(feature, check) {
+
+		feature.setProperty('selected', true);
+		var name = feature.getProperty('name'),
+			desc = feature.getProperty('description');
+		$('.location-desc').html( desc );
+		$('.location-title').html( name );
+		curFeature = feature;
+
+		if (check) {
+			$('#' + curFeature.getId() + ' input[type=checkbox]').attr('checked','checked');
+		}
+
+	}
+
+
+	
+
+
+	function setDataLayerStyles() {
+
+		map.data.setStyle(function(feature){
+
+			var color = '#004E3C',
+				strokeWeight = 1,
+				strokeColor = '#004E3C',
+				zIndex = 0,
+				fillOpacity = 0.5;
+
+			if (feature.getProperty('selected')) {
+				color = '#004E3C';
+				zIndex = 1;
+				fillOpacity = 0.9;
+			}
+
+			if (feature.getProperty('member')) {
+				color = '#8EC146';
+				zIndex = 2;
+			}
+
+			if (feature.getProperty('hover')) {
+				fillOpacity = 1;
+				strokeWeight = 1;
+				zIndex = 3;
+			}
+
+			return {
+				'fillColor': color,
+				'fillOpacity': fillOpacity,
+				//icon: 'string',
+				'strokeColor': strokeColor,
+				'strokeOpacity': 1,
+				'title': feature.getProperty('NAVN'),
+				'strokeWeight': strokeWeight,
+				'zIndex': zIndex
+			};
+
+		});
+
+	}
+
+	function setMuniciplaityLayer( data, layerObj, parentCounty ) {
+
+		// clear current map
+		map.data.setMap(null);
+		map.data = new google.maps.Data({map:map});
+		map.data.setMap(map);
+
+		// set new layer
+		var geoJsonObject = topojson.feature(data, layerObj);
+		map.data.addGeoJson( geoJsonObject );
+
+		setDataLayerStyles();
+
+		map.data.addListener('click', function(event) {
+			var feature = event.feature;
+		});
+
+		map.data.addListener('mouseover', function(event) {
+			$('.circle .name').html( event.feature.getProperty('name') );
+			event.feature.setProperty('hover', true);
+		});
+
+		map.data.addListener('mouseout', function(event) {
+			event.feature.setProperty('hover', false);
+			$('.circle .name').html('');
+		});
+
+		$('.close').show();
+
+	}
+
+	function setCountyLayer() {
+
+		$('.close').hide();
+
+		// clear current map
+		map.data.setMap(null);
+		map.data = new google.maps.Data({map:map});
+		map.data.setMap(map);
+
+		// set new layer
+		var geoJsonObject = topojson.feature(geojsondata, geojsondata.objects.counties_clean);
+		map.data.addGeoJson( geoJsonObject );
+
+		/*
+		var j=0;
+		map.data.forEach(function(feature){
+			console.log(j++);
+		});
+		*/
+
+		setDataLayerStyles();
+
+		map.data.addListener('mouseover', function(event) {
+			//console.log( event.feature.getProperty('NAVN') );
+			$('.circle .name').html( event.feature.getProperty('name') );
+			event.feature.setProperty('hover', true);
+		});
+
+		map.data.addListener('mouseout', function(event) {
+			event.feature.setProperty('hover', false);
+			$('.circle .name').html('');
+		});
+
+		map.data.addListener('click', function(event) {
+
+			var feature = event.feature,
+				fylkenr = feature.getId(),
+				municTopojson = {
+					geometries: [],
+					type: "GeometryCollection"
+				};
+
+			var children_ids = municipalitiesInCounty( fylkenr, feature.getProperty('name') ),
+				allMunicGeometries = geojsondata.objects.municipalities_clean.geometries;
+
+			for ( var prop in allMunicGeometries ) {
+				var currentMunic = allMunicGeometries[prop];
+				for (var i=0; i<children_ids.length; i++) {
+					if (currentMunic.id==children_ids[i]) {
+						municTopojson.geometries.push(currentMunic);
+					}
+				}
+			}
+
+			setMuniciplaityLayer( geojsondata, municTopojson, feature );
+
+		});
+
+	}
+
+	$('.close').on('click', function(){
+		setCountyLayer();
+	}).hide();
+
+
+	function addGeoJSON() {
+
+		// https://developers.google.com/maps/documentation/javascript/3.exp/reference#Data
+		
+		$.getJSON('../json/norway.json', function(data){
+			
+			geojsondata = data;
+
+			setCountyLayer();
+
+			buildCountyList(data);
+			//getMembersMunic();
+
+		});
+
+	}
+
+	function setMapStyles() {
+		/*$.getJSON( 'assets/off.json', function( style ) {
+			var mapType = new google.maps.StyledMapType(style, {name:"maptheme"});
+			map.mapTypes.set('maptheme', mapType);
+			map.setMapTypeId('maptheme');
+		});*/
+		var mapType = new google.maps.StyledMapType(window.mapstyle, {name:"maptheme"});
+		map.mapTypes.set('maptheme', mapType);
+		map.setMapTypeId('maptheme');
+	}
+
+
+	function initializeMap() {
+
+		var options = {
+			'center': new google.maps.LatLng(65.047027, 12.895508),
+			'zoom': 5,
+			'maxZoom': 7,
+			'minZoom': 4,
+			'mapTypeId': google.maps.MapTypeId.ROADMAP,
+			'scrollwheel': false,
+			//disableDefaultUI: true,
+			'disableDoubleClickZoom': true,
+			'draggable': !Modernizr.touch,
+			'backgroundColor': 'white'
+		}
+
+		map = new google.maps.Map(document.getElementById("map-canvas"), options);
+
+		setMapStyles();
+		addGeoJSON();
+
+		// http://jsfiddle.net/nYz6k/
+		var bounds = new google.maps.LatLngBounds(new google.maps.LatLng(57.984808, 4.394531), new google.maps.LatLng(71.413177, 32.607422));
+		map.fitBounds(bounds);
+		map.setCenter( bounds.getCenter() );
+
+	};
+
+
+	google.maps.event.addDomListener(window, 'load', initializeMap);
+
+
+
+	function addMapMarker(lat, lng, title) {
+
+		//var myIcon = new google.maps.MarkerImage( settings.icon, null, null, null, new google.maps.Size(32,48));
+
+		var opts = {
+			'map': map,
+			'position': new google.maps.LatLng(lat, lng),
+			'title': title
+			//icon: myIcon
+		};
+
+		var marker = new google.maps.Marker(opts);
+
+		/*google.maps.addListener(marker, 'click', function() {
+			//window.open("https://www.google.com/maps/place/59°55'35.7%22N+10°43'42.9%22E/@59.926584,10.728584,17z/data=!4m2!3m1!1s0x0:0x0");
+			return false;
+		});*/
+	}
+
+
+	function checkBounds() {    
+		if(! allowedBounds.contains(map.getCenter())) {
+			var C = map.getCenter();
+			var X = C.lng();
+			var Y = C.lat();
+
+			var AmaxX = allowedBounds.getNorthEast().lng();
+			var AmaxY = allowedBounds.getNorthEast().lat();
+			var AminX = allowedBounds.getSouthWest().lng();
+			var AminY = allowedBounds.getSouthWest().lat();
+
+			if (X < AminX) {X = AminX;}
+			if (X > AmaxX) {X = AmaxX;}
+			if (Y < AminY) {Y = AminY;}
+			if (Y > AmaxY) {Y = AmaxY;}
+
+			map.setCenter(new google.maps.LatLng(Y,X));
+		}
+	}
+
+
+	
+
+
+})(jQuery,document,window);

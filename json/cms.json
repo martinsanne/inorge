@@ -1,0 +1,51 @@
+var cms = {
+
+	"texts" : {
+		
+		"nonmember" : {
+			"title" : "%kommune% er ikke medlem!",
+			"intro": "<h3>%kommune% kommune er ikke kontrollmedlem i Grønt Punkt Norge.</h3><p>Det betyr at kommunen heller ikke følger opp miljømyndighetenes oppfordring til offentlige virksomheter om at de skal kreve av sine leverandører at de er medlem i en returordning for brukt emballasje.</p><a target='_blank' href='http://www.grontpunkt.no/medlemskap/om-medlemskap'>Slik blir kommunen kontrollmedlem</a>",
+			"share" : "<h3>Jeg er ikke fornøyd med å bo i en kommune som ikke stiller miljøkrav til sine leverandører.</h3><p>Med dette oppfordrer jeg %kommune% kommune til å kreve at deres leverandører tar miljøansvar for den emballasjen de er ansvarlig for.</p>",
+			"tweet" : "Kommunen min er ikke medlem av Grønt Punkt. Er din?"
+		},
+		
+		"member" : {
+			"title" : "%kommune% er medlem!",
+			"intro": "<h3>%kommune% kommune er kontrollmedlem i Grønt Punkt Norge.</h3><p>Det betyr at kommunen stiller krav til alle sine norske vareleverandører om at de er medlem i Grønt Punkt og på den måten bidrar til spleiselaget for å finansiere innsamling og gjenvinning av brukt emballasje.</p>",
+			"share" : "<h3>Tommel opp for kommunen jeg bor i!</h3><p>%kommune% kommune er kontrollmedlem i Grønt Punkt Norge og tar et viktig miljøansvar ved å sørge for at dens leverandører er med å betale for innsamling og gjenvinning av den emballasjen de sender ut på markedet.</p>",
+			"tweet" : "YAY! Kommunen min er medlem av Grønt Punkt! Er din?"
+		}
+
+	},
+
+	"global" : {
+
+		"companies" : "Det er <span class='count'>%antall%</span> medlemsbedrifter i <span class='municipality'>%kommune%</span>"
+
+	},
+
+	"extra_links" : [
+		
+		{
+			"text" : "Finn nærmeste returpunkt",
+			"url" : "http://sortere.no/kommune/%kommune%/"
+		},
+
+		{
+			"text" : "Er din bedrift grønt punkt-medlem? Bli medlem her!",
+			"url" : "http://www.grontpunkt.no/medlemskap"
+		},
+
+		{
+			"text" : "Er du leverandør og blir møtt av krav om medlemskap?",
+			"url" : "http://www.grontpunkt.no/medlemskap/bli-medlem/krav-og-sertifisering/kontrollmedlemskap"
+		},
+
+		{
+			"text" : "Sjekk også vår enkle innmeldingsguide for medlemskap",
+			"url" : "http://medlem.grontpunkt.no/gp_public.php?el=enrollment_survey"
+		}
+		
+	]
+
+}

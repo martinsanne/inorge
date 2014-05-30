@@ -3,11 +3,9 @@ html {
 }
 
 body {
-	@include font-smoothing;
 	@include placeholder-color( $color-secondary );
 	@include font( 1.6, 1.5 );
-	font-family: 'AvenirNext-DemiBold', Arial, 'Helvetica Neue', 'HelveticaNeue', Helvetica, sans-serif;
-	font-weight: 300;
+	font-family: 'AvenirNext-Regular', Arial, 'Helvetica Neue', 'HelveticaNeue', Helvetica, sans-serif;
 	color: $deepgreen;
 	@include media( $small ) {
 		@include font( 1.4, 1.5 );
@@ -21,10 +19,11 @@ body {
 a {
 	color: $deepgreen;
 	text-decoration: none;
-	h1, h2, h3, h4, h5, h6 {
-		color: $deepgreen;
-	}
+	border-bottom: 1px solid $lightgreen;
 	&:hover {
+		color: $lightgreen;
+	}
+	h1, h2, h3, h4, h5, h6 {
 		color: $deepgreen;
 	}
 }
@@ -32,8 +31,18 @@ a {
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 300;
 	margin: 0;
+	font-family: 'AvenirNext-DemiBold', Arial, 'Helvetica Neue', 'HelveticaNeue', Helvetica, sans-serif;
+	@include font-smoothing;
 }
 
 h1 {
 	font-size: 3em;
+	line-height: 1em;
+	margin-bottom: 1em;
+}
+
+h2 {
+	font-size: 3em;
+	line-height: 1em;
+	margin-bottom: 0.5em;
 }

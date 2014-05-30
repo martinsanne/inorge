@@ -86,25 +86,6 @@ svg {
 	white-space: nowrap;
 }
 
-.close {
-	position: absolute;
-	text-align: center;
-	width: 40px;
-	height: 40px;
-	background-color: #004E3C;
-	font-weight: bold;
-	cursor: pointer;
-	line-height: 40px;
-	color: #FFF;
-	border-radius: 50%;
-	top: 30px;
-	right: 30px;
-	font-size: 30px;
-	&.hidden {
-		display: none;
-	}
-}
-
 .current-county {
 	width: 30%;
 }
