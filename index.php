@@ -64,7 +64,7 @@ $script = 'dist/js/main.'.date('U', filemtime( dirname(__FILE__).'/dist/js/main.
 					<img class="app-logo" src="images/grontpunkt.svg" onerror="this.src='images/grontpunkt.png'" alt="Grønt Punkt">
 				</a>
 
-				<h2 class="padded"><span class="green">18</span> av <span class="green">420</span> kommuner i Norge er Grønt Punkt medlem. Bor du i en grønn kommune?</h2>
+				<h2 class="padded"></h2>
 			
 				<div class="chosen-wrap"></div>
 

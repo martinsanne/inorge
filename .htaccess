@@ -18,8 +18,8 @@ AddType image/svg+xml svgz
 	RewriteBase /
 	RewriteCond	%{REQUEST_FILENAME}     !-f
 	RewriteCond	%{REQUEST_FILENAME}     !-d
-	RewriteRule ^([a-zA-Z0-9\-]+)/?$ /web/kunder/2014/grontpunkt/index.php?foo=$1 [L,QSA]
-	RewriteRule ^([a-zA-Z0-9\-]+)/([a-zA-Z0-9\-]+)/?$ /web/kunder/2014/grontpunkt/index.php?foo=$1&bar=$2 [L,QSA]
+	RewriteRule ^([a-zA-Z0-9\-\æøå]+)/?$ /web/kunder/2014/grontpunkt/index.php?foo=$1 [L,QSA]
+	#RewriteRule ^([a-zA-Z0-9\-]+)/([a-zA-Z0-9\-]+)/?$ /web/kunder/2014/grontpunkt/index.php?foo=$1&bar=$2 [L,QSA]
 
 </IfModule>
 

@@ -119,14 +119,49 @@
 	*/
 
 	d3.json("json/member_municipalities_new.json", function(error, data) {
+
 		member_municipalities = data;
+		setInitialMemberData();
 		d3.json("json/norway.json", mapDataLoaded);
+
 	});
 
 	/*
 	LOAD MAP DATA
 	*/
 
+	function forceUnicodeEncoding(string) {
+		return unescape(encodeURIComponent(string));
+	}
+
+	function getMunicipalityData(key, value) {
+		for (var i=0; i<member_municipalities.length; i++) {
+			var munic = member_municipalities[i];
+			console.log( munic[key].toUpperCase() + ' / ' + value.toUpperCase() );
+			if ( munic[key].toUpperCase() === value.toUpperCase() ) {
+				return munic;
+			}
+		}
+	}
+
+	function setInitialMemberData() {
+
+		var total = member_municipalities.length,
+			members = 0,
+			string = '';
+
+		for (var i=0; i<total; i++) {
+			var munic = member_municipalities[i];
+			if (munic.membership_type!==0) {
+				members++;
+			}
+		}
+
+		string = '<span class="green">'+members+'</span> av <span class="green">'+total+'</span> kommuner i Norge er medlem i Grønt Punkt. Bor du i en grønn kommune?';
+		
+		$('#drawer h2').html(string);
+
+	}
 
 	function buildMunicipalityTextContent() {
 
@@ -138,6 +173,9 @@
 		return str.replace(new RegExp(find, 'g'), replace);
 	}
 
+	// cache modal template and remove from DOM
+	var modal_template = $('#template').html();
+	$('#template').remove();
 
 	function goToMunicipality(muni_id) {
 
@@ -154,7 +192,7 @@
 
 		// set modal content
 		
-		var template = $('#template').html(),
+		var template = modal_template,
 			links_array = cms.extra_links,
 			title = replaceAll('%kommune%', data.properties.name, cms.texts[key].title),
 			intro = replaceAll('%kommune%', data.properties.name, cms.texts[key].intro),
@@ -278,6 +316,9 @@
 				}	
 				
 			});
+
+
+		
 				
 
 		/*
@@ -355,6 +396,14 @@
 				}
 			})
 			.text(function(d) { return d.properties.name; });
+
+		if ( $('#app').data('county') ) {
+			var test = getMunicipalityData('municipality_name', $('#app').data('county') );
+			if (test) {
+				var id = parseInt(test.municipality_code, 10);
+				goToMunicipality( id );
+			}
+		}
 
 	}
 
@@ -530,10 +579,5 @@
 
 	});*/
 
-	/*
-	if ( $('#app').data('county') ) {
-		var countyname = $('#app').data('county');
-	}
-	*/
 
 })(jQuery,window,document);
