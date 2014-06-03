@@ -5,7 +5,8 @@
 		width = 550,
 		height = 780,
 		active = d3.select(null),
-		aspect = 550 / 780;
+		aspect = 550 / 780,
+		$chosen; // esc button action
 
 
 	// Move Norway into position
@@ -22,26 +23,29 @@
 
 	// add map svg
 	var svg = d3.select("#map-holder").append("svg")
-		.attr("width", width)
-		.attr("height", height)
+		//.attr("width", width)
+		//.attr("height", height)
+		.attr("width", "100%")
+		.attr("height", "100%")
 		.attr('viewBox', '0 0 '+width+' '+height+'');
 
-	svg.append("rect")
+	/*svg.append("rect")
 		.attr("class", "background")
 		.attr("width", "100%")
 		.attr("height", "100%")
-		.on("click", resetMapView);
+		.on("click", resetMapView);*/
 
 	var g = svg.append("g")
 		.attr("id", "norway")
 		.attr("class", "country")
 		.style("stroke-width", "1px");
 
-	var close_button = d3.selectAll('.map-close').classed('hidden', true);
+	//var close_button = d3.selectAll('.map-close').classed('hidden', true);
 
-	close_button.on('click', function(){
+	var $closeButton = $('.map-close').on('click', function(event){
 		resetMapView();
-	});
+		event.preventDefault();
+	}).hide();
 
 
 	/*
@@ -141,6 +145,8 @@
 			current_munic.classed('current', false);
 		}
 
+		$chosen.val(muni_id).trigger("chosen:updated");
+
 		current_munic = d3.select("#m-" + muni_id).classed('current', true);
 
 		var data = current_munic.data()[0],
@@ -154,12 +160,12 @@
 			intro = replaceAll('%kommune%', data.properties.name, cms.texts[key].intro),
 			share = replaceAll('%kommune%', data.properties.name, cms.texts[key].share),
 			links = '',
-			companies = replaceAll('%antall%', data.properties.companies, cms.global.companies),
-			enc_share_url = encodeURIComponent('http://gpunkt.no/kommune/' + data.properties.name +'/'),
+			companies = '', //replaceAll('%antall%', data.properties.companies, cms.global.companies),
+			enc_share_url = encodeURIComponent('http://grontpunkt.no/kommune/' + data.properties.name +'/'),
 			tweet_text = cms.texts[key].tweet,
-			twitter_url = '<a class="twitter" href="https://twitter.com/share?url='+enc_share_url+'&text='+tweet_text+'" target="_blank">Twitter</a>',
-			facebook_url = '<a class="facebook" href="http://www.facebook.com/sharer.php?u='+enc_share_url+'" target="_blank">Facebook</a>',
-			google_url = '<a class="google" href="https://plus.google.com/share?url='+enc_share_url+'" target="_blank">Google+</a>',
+			twitter_url = '<a class="twitter" href="https://twitter.com/share?url='+enc_share_url+'&text='+tweet_text+'" target="_blank"><i class="icon-twitter"></i> Twitter</a>',
+			facebook_url = '<a class="facebook" href="http://www.facebook.com/sharer.php?u='+enc_share_url+'" target="_blank"><i class="icon-facebook"></i> Facebook</a>',
+			google_url = '<a class="google" href="https://plus.google.com/share?url='+enc_share_url+'" target="_blank"><i class="icon-googleplus"></i> Google+</a>',
 			//mail_url = '<a class="mail" href="mailto:?title='+cms.texts[key].tweet+'">E-post</a>',
 			share_links = twitter_url+facebook_url+google_url;
 
@@ -194,13 +200,18 @@
 
 		$('#modal .content').html(template);
 
-		$("body").toggleClass("has-modal");
+		$("body").addClass("has-modal");
 
 	}
 
-
-	$('#modal').on('click', '.close', function(){
+	function closeModal() {
+		$chosen.val('').trigger('chosen:updated');
 		$("body").removeClass("has-modal");
+	}
+
+	$('#modal').on('click', '.close', function(event){
+		closeModal();
+		event.preventDefault();
 	});
 
 
@@ -218,7 +229,7 @@
 		*/
 
 		var member_count = {},
-			chosenbuild = '<select id="municipality-selector" data-placeholder="Velg kommune"><option></option>';
+			chosenbuild = '<select id="municipality-selector" data-placeholder="Finn kommune…"><option></option>';
 
 		for (var i=0; i<municipality_features.length; i++) {
 			var muni = municipality_features[i],
@@ -246,20 +257,28 @@
 		BUILD SELECT LIST
 		*/
 
-		var $chosen = $(chosenbuild)
+		$chosen = $(chosenbuild)
 			.appendTo('.chosen-wrap')
-			.chosen()
+			.chosen({
+				no_results_text: "Fant ingen resultater for",
+				allow_single_deselect: true,
+				width: "100%"
+			})
 			.on('change', function(event){
 			
-				var muni_id = $(this).val(),
-					parent_id = relations[muni_id],
-					county = d3.select("#c-" + parent_id).data()[0]; // get the data object
+				var muni_id = $(this).val();
 
-				goToCounty(county);
-				
-				goToMunicipality(muni_id);
+				if ( muni_id ) {
+					var parent_id = relations[muni_id],
+						county = d3.select("#c-" + parent_id).data()[0]; // get the data object
+					goToCounty(county);
+					goToMunicipality(muni_id);
+				}else{
+					closeModal();
+				}	
 				
 			});
+				
 
 		/*
 		BUILD MAP - COUNTY LEVEL
@@ -350,7 +369,7 @@
 		g.selectAll(".municipalities").remove();
 		g.selectAll(".munic-labels").remove();
 
-		close_button.classed('hidden', false);
+		$closeButton.show();
 
 		// remove active class from current and set new
 		//active.classed("active", false);
@@ -467,7 +486,7 @@
 		active.classed("active", false);
 		active = d3.select(null);
 
-		close_button.classed('hidden', true);
+		$closeButton.hide();
 
 		d3.select('.current-county').text('Er din kommune grønn?');
 
@@ -484,21 +503,23 @@
 			.duration(500)
 			.style('opacity', '1');
 
-		$("body").removeClass("has-modal");
-
 	}
 
 	function closeOnEscape(event) {
 		var key = (event.keyCode) ? event.keyCode : event.which;
 		if (key===27) {
-			resetMapView();
+			if ( $('body').hasClass('has-modal') ) {
+				closeModal();
+			}else{
+				resetMapView();
+			}
 		}
 	}
 
 	$html.on('keyup', closeOnEscape);
 	
-	/*	
-	$window.on('resize', function(){
+
+	/*$window.on('resize', function(){
 
 		width = $window.width();
 		height = $window.height();
@@ -507,11 +528,12 @@
 			.attr("width", width)
 			.attr("height", height * aspect );
 
-	});
-	*/
+	});*/
 
+	/*
 	if ( $('#app').data('county') ) {
 		var countyname = $('#app').data('county');
 	}
+	*/
 
 })(jQuery,window,document);

@@ -8,8 +8,20 @@
 				"margin-bottom"
 			],
 			[
+				"bac",
+				"background-color"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
 				"tex",
-				"text-align"
+				"text-indent"
+			],
+			[
+				"modal",
+				"modal_content"
 			],
 			[
 				"munici",
@@ -50,14 +62,6 @@
 			[
 				"get",
 				"getProperty"
-			],
-			[
-				"pad",
-				"padding"
-			],
-			[
-				"bac",
-				"background-color"
 			],
 			[
 				"marg",
@@ -207,6 +211,38 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "src/scss/partials/modules/_map.scss",
+			"settings":
+			{
+				"buffer_size": 1602,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/js/app.js",
+			"settings":
+			{
+				"buffer_size": 14024,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": ".htaccess",
+			"settings":
+			{
+				"buffer_size": 8431,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/scss/partials/modules/_modal.scss",
+			"settings":
+			{
+				"buffer_size": 1647,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -276,17 +312,23 @@
 	},
 	"file_history":
 	[
-		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/src/scss/partials/base/_mixins.scss",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/src/js/app.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/json/cms.json",
 		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/index.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/src/scss/partials/modules/_modal.scss",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/src/scss/partials/modules/_map.scss",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/json/member_municipalities_new.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/json/member_municipalities.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/json/counties.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/index2.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/.htaccess",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/json/backend.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/src/scss/partials/base/_mixins.scss",
 		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/src/scss/partials/base/_typography.scss",
 		"/Users/martinsannekristiansen/Library/Caches/Cleanup At Startup/Transmit/313A9F9F-34CB-4738-8011-9D9C69D2D13B/.htaccess",
-		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/.htaccess",
 		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/src/scss/partials/layout/_grid.scss",
-		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/src/scss/partials/modules/_modal.scss",
 		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/src/scss/partials/modules/_all.scss",
 		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/src/scss/partials/modules/_buttons.scss",
-		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/src/js/app.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/src/scss/partials/modules/_map.scss",
 		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/images",
 		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/index.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/src/scss/partials/base/_variables.scss",
@@ -298,11 +340,9 @@
 		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/gulpfile.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/dist/js/main.js",
 		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/d3/index.html",
-		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/json/member_municipalities.json",
 		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/index2.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/json/norway-old.json",
 		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/json/municipalities_clean.json",
-		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/json/counties.json",
 		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/json/norway.json",
 		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/json/index.php",
 		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/grontpunkt/json/counties_clean.json",
@@ -399,11 +439,7 @@
 		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/css/less/cookie-warning.less",
 		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/templates/cookie-warning.php",
 		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/inc/shortcodes.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/inc/init.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/js/showrooms.js",
-		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/css/less/1600.less",
-		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/inc/admin/admin.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/inc/admin/theme-options.php"
+		"/Applications/XAMPP/xamppfiles/htdocs/web/kunder/2014/dinesen/wp-content/themes/dinesen/inc/init.php"
 	],
 	"find":
 	{
@@ -428,6 +464,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"bust",
+			"companies",
+			"share-links",
+			"background",
+			"companies",
+			"count",
+			"companyCount",
+			"isMember",
+			"municipalities.json",
+			"isMember",
+			"member_municipalities",
+			"member_munici",
 			"close_button",
 			".close",
 			"gotoMun",
@@ -543,19 +591,7 @@
 			".wrap",
 			"swrap",
 			"class=\"container",
-			".container",
-			"#wrap",
-			"acf_",
-			"global",
-			"#content",
-			"#wrap",
-			"$header_wrap_push",
-			"header-wrap-push",
-			"simple-slider",
-			"fixed",
-			"site-title",
-			"@menu_padding:",
-			"search"
+			".container"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -595,8 +631,126 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "src/scss/partials/modules/_map.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1602,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								584,
+								584
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/js/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14024,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2992,
+								2992
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 1.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": ".htaccess",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8431,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								346,
+								346
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/scss/partials/modules/_modal.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1647,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								298,
+								298
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
 			]
 		}
 	],

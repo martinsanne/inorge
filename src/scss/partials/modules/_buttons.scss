@@ -15,3 +15,17 @@
 		color: $lightgreen;
 	}
 }
+
+.map-close {
+	display: block;
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	border: 1px solid $lightgreen;
+	padding: 5px;
+	font-size: 32px;
+	background-color: #FFF;
+	&:hover {
+		color: $lightgreen;
+	}
+}

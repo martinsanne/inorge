@@ -39,12 +39,6 @@ $script = 'dist/js/main.'.date('U', filemtime( dirname(__FILE__).'/dist/js/main.
 	<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 	<![endif]-->
 
-	<noscript>
-		<div class="noscript">
-			<h3>Denne nettsiden er basert på JavaScript og vil ikke fungere uten at JavaScript er aktivert.</h3>
-		</div>
-	</noscript>
-
 	<?php 
 
 	//print_r( $_GET['foo'] );
@@ -52,27 +46,53 @@ $script = 'dist/js/main.'.date('U', filemtime( dirname(__FILE__).'/dist/js/main.
 
 	?>
 
+	<noscript>
+		<div class="noscript">
+			<h3>Denne nettsiden er basert på JavaScript og vil ikke fungere uten at JavaScript er aktivert.</h3>
+		</div>
+	</noscript>
+
 	<div id="app" <?php echo isset($_GET['foo']) ? 'data-county="'.$_GET['foo'].'"' : ''; ?>>
+		
 		<div id="map-holder"></div>
-		<h1 class="current-county">Er din kommune grønn?</h1>
-		<div class="map-close close">&times;</div>
-		<div class="chosen-wrap"></div>
+		
+		<div id="drawer">
+
+			<div class="guts">
+
+				<a href="index.php" class="logo-wrap padded">
+					<img class="app-logo" src="images/grontpunkt.svg" onerror="this.src='images/grontpunkt.png'" alt="Grønt Punkt">
+				</a>
+
+				<h2 class="padded"><span class="green">18</span> av <span class="green">420</span> kommuner i Norge er Grønt Punkt medlem. Bor du i en grønn kommune?</h2>
+			
+				<div class="chosen-wrap"></div>
+
+			</div>
+
+		</div>
+
 		<div id="modal">
 			<div class="background"></div>
 			<article class="content">
 			</article>
 			<div class="modal-close close">&times;</div>
 		</div>
+
+		<a href="#" title="Vis hele kartet" class="map-close icon-norway"></a>
+
 	</div>
 
 	<div id="template" style="display:none;">
-		<h2 class="title"><i class="member-icon"></i> %title%</h2>
+		<h1 class="title"><i class="member-icon"></i> %title%</h1>
 		<div class="intro">%intro%</div>
 		<p class="companies">%companies%</p>
 		<div class="share-text">%share%</div>
 		<ul class="share-links">%share_links%</ul>
 		<ul class="links">%links%</ul>
 	</div>
+
+	<div class="loader"><i class="icon-gplogo"></i></div>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="dist/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>

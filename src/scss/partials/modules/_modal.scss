@@ -1,21 +1,23 @@
 .member-icon {
-	width: 50px;
-	height: 50px;
 	@include inline-block;
+	width: 0.8em;
+	height: 0.8em;
 	background-position: top left;
 	background-image: url('../../images/member.png');
 	background-color: transparent;
+	background-size: 100% auto; // make multisupport
 }
 
 #modal {
 
 	position: fixed;
 	top: 0;
-	left: 0;
-	width: 100%;
+	left: 30%;
+	width: 70%;
 	height: 100%;
 	opacity: 0;
 	pointer-events: none;
+	z-index: 1000;
 
 	// main layout
 
@@ -23,10 +25,10 @@
 
 		position: absolute;
 		width: 100%;
-		left: 30%;
-		width: 70%;
+		left: 0;
+		//width: 60%;
 		padding: 40px;
-		transform: scale(1.5);
+		transform: translate(100px, 0);
 		transition: transform 0.4s ease;
 		box-sizing: border-box;
 		padding: 40px;
@@ -41,7 +43,7 @@
 		top: 0;
 		left: 0;
 		background-color: #FFF;
-		opacity: 0.6;
+		//opacity: 0.6;
 		pointer-events: none;
 
 	}
@@ -60,7 +62,21 @@
 	.share-links {
 		margin-bottom: 2em;
 		a {
+			margin-bottom: 15px;
 			margin-right: 15px;
+			padding: 12px 18px;
+			border: 1px solid $lightgreen;
+			@include inline-block;
+			&:hover {
+				background-color: $lightgreen;
+				color: #FFF;
+			}
+			i {
+				margin-right: 0.5em;
+				font-size: 1.2em;
+				position: relative;
+				top: 0.15em;
+			}
 		}
 	}
 	.links {
@@ -94,13 +110,14 @@
 body {
 	&.has-modal {
 		#map-holder {
-			filter: blur(10px);
+			//filter: blur(10px);
 		}
 		#modal {
 			opacity: 1;
 			pointer-events: auto;
 			.content {
-				transform: scale(1);
+				//transform: scale(1);
+				transform: translate(0, 0);
 			}
 		}
 	}	
@@ -110,4 +127,26 @@ body {
 
 #map-holder, #modal {
 	transition: all 0.4s ease;
+}
+
+
+
+.loader {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 1000;
+	width: 64px;
+	height: 64px;
+	margin-top: -32px;
+	margin-left: -32px;
+	font-size: 64px;
+	pointer-events: none;
+	animation: spinner 1s linear infinite;
+	display: none; // hidden
+}
+
+@keyframes spinner {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(359deg); }
 }

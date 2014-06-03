@@ -1,19 +1,10 @@
-.current-county {
-	position: absolute;
-	top: 20px;
-	left: 20px;
-	line-height: 1em;
-	margin: 0;
-	padding: 0;
-	.member, .total, .munic-name {
-		color: $lightgreen;
-	}
-}
-
 #map-holder {
 
-	width: 100%;
+	position: absolute;
+	left: 30%;
+	width: 70%;
 	height: 100%;
+	overflow: visible;
 	-webkit-transform: translateZ(0);
 
 	.background {
@@ -23,7 +14,7 @@
 
 	.county {
 
-		fill: #FFF;//tint($deepgreen, 70%);
+		fill: #FFF; //tint($deepgreen, 70%);
 		cursor: pointer;
 		transition: fill 0.5s;
 		&.hover {
@@ -36,7 +27,7 @@
 	}
 
 	.county, .municipality {
-		stroke: shade($lightgreen, 20%);
+		stroke: shade($lightgreen, 20%); // #FFF;
 		stroke-linecap: round;
 		stroke-linejoin: round;
 	}

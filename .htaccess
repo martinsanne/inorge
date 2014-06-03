@@ -1,6 +1,9 @@
 #RewriteEngine on
 #RewriteRule datalayer/datalayer.json datalayer/datalayer.php
 
+AddType image/svg+xml svg
+AddType image/svg+xml svgz
+
 <FilesMatch "\.(htm|html|php)$">
     <IfModule mod_headers.c>
         BrowserMatch MSIE ie
